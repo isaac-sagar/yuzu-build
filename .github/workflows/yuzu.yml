@@ -47,4 +47,3 @@ jobs:
             };
             await myExec(`git remote rename "origin" "upstream"`)
             await myExec(`git remote add "origin" "https://github.com/isaac-sagar/yuzuemu.git"`);
-            #console.log(git remote -v)
