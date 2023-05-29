@@ -26,8 +26,6 @@ jobs:
         # due to how chocolatey works, only cmd.exe is supported here
         shell: cmd
         run: |
-          choco install vulkan-sdk
-          call refreshenv
           echo %PATH% >> %GITHUB_PATH%
       - name: Merge PR
         uses: actions/github-script@v6
@@ -45,7 +43,8 @@ jobs:
               let pn = pr.number;
               await myExec(`git fetch "https://github.com/yuzu-emu/yuzu.git" "pull/${pn}/head:pr-${pn}" -f --no-recurse-submodules`);
               await myExec(`git merge --squash "pr-${pn}"`)
-              await myExec(`git commit -m "${pr.title}" `)
+              await myExec(`git commit -m "${pr.title}"`)
             };
-            await myExec(`git fetch "https://github.com/isaac-sagar/yuzuemu.git" "git push --force origin/master"`);
-
+            await myExec(`git remote rename origin upstream`)
+            await myExec(`git remote add origin https://github.com/isaac-sagar/yuzuemu.git`)
+            console.log(git remote -v)
