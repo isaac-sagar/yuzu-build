@@ -17,8 +17,8 @@ jobs:
           fetch-depth: 0
       - name: Configure git
         run: |
-          git config --global user.email "yuzu@yuzu-emu.org"
-          git config --global user.name "yuzubot"
+          git config --global user.email "isaac.sagar@gmail.com"
+          git config --global user.name "isaac-sagar"
           git config --global pull.rebase true
           git config --global rebase.autoStash true
           git config --global fetch.prune true
