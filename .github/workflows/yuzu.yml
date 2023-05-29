@@ -45,6 +45,6 @@ jobs:
               await myExec(`git merge --squash "pr-${pn}"`)
               await myExec(`git commit -m "${pr.title}"`)
             };
-            await myExec(`git remote rename origin upstream`)
-            await myExec(`git remote add origin https://github.com/isaac-sagar/yuzuemu.git`)
+            await myExec(`git remote rename "origin" "upstream"`)
+            await myExec(`git remote add "origin" "https://github.com/isaac-sagar/yuzuemu.git"`)
             console.log(git remote -v)
