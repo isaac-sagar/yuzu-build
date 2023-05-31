@@ -78,6 +78,7 @@ jobs:
         with:
           name: windows(only exe)
           path: artifacts/yuzu.exe
+          retention-days: 5
 
       - name: Pack 7z
         shell: cmd
