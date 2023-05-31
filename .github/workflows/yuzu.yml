@@ -56,7 +56,7 @@ jobs:
         env:
           CC: cl.exe
           CXX: cl.exe
-          CXXFLAGS: "/Gw /GA /Gr /Ob2"
+          CXXFLAGS: "/Gw /GA /Gr /Ob2 /Ofast /march=znver3"
         run: |
           glslangValidator --version
           mkdir build
