@@ -26,7 +26,6 @@ jobs:
         # due to how chocolatey works, only cmd.exe is supported here
         shell: cmd
         run: |
-          choco install vulkan-sdk
           call refreshenv
           echo %PATH% >> %GITHUB_PATH%
       - name: Merge PR
