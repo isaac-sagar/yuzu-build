@@ -56,7 +56,7 @@ jobs:
         env:
           CC: cl.exe
           CXX: cl.exe
-          CXXFLAGS: "/Gw /GA /Gr /Ob2 /Ofast /march=znver3"
+          CXXFLAGS: "/Gw /GA /Gr /Ob2"
         run: |
           glslangValidator --version
           mkdir build
@@ -83,14 +83,3 @@ jobs:
         shell: cmd
         run:
           7z a -m0=lzma2 -mx=9 -ms=on yuzu-windows.7z artifacts/*
-      - name: Create release
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "yuzu-windows.7z,artifacts/yuzu.exe"
-          name: "${{ env.time }}"
-          body: "${{ env.body }}"
-          tag: "release"
-          allowUpdates: true
-          artifactErrorsFailBuild: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
