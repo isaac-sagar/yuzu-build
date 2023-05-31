@@ -58,5 +58,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: fullsrc
-          path: ./yuzu-windows.7z
+          path: yuzu-windows.7z
           retention-days: 1
